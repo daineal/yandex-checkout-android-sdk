@@ -22,6 +22,7 @@
 package ru.yandex.money.android.sdk.impl.metrics
 
 import android.content.Context
+import android.util.Log
 import com.yandex.metrica.YandexMetrica
 import ru.yandex.money.android.sdk.BuildConfig
 import ru.yandex.money.android.sdk.model.SdkException
@@ -29,31 +30,42 @@ import ru.yandex.money.android.sdk.model.UnhandledException
 
 internal class YandexMetricaReporter(context: Context) : Reporter {
 
-    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
+//    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
 
-    override fun report(name: String, args: List<Param>?) =
-        metrica.reportEvent(name, args?.associate { it.name to it.value })
+    override fun report(name: String, args: List<Param>?) {
+
+    }
+//          val a: Int = 1
+//        metrica.reportEvent(name, args?.associate { it.name to it.value })
 }
 
 internal class YandexMetricaErrorReporter(context: Context) : ErrorReporter {
 
-    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
+//    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
 
-    override fun report(e: SdkException) = metrica.reportError("Sdk error", e)
+    override fun report(e: SdkException) {
+
+    }
 }
 
 internal class YandexMetricaExceptionReporter(context: Context) : ExceptionReporter {
 
-    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
+//    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
 
-    override fun report(e: UnhandledException) = metrica.reportUnhandledException(e)
+    override fun report(e: UnhandledException){
+
+    }
 }
 
 internal class YandexMetricaSessionReporter(context: Context) : SessionReporter {
 
-    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
+//    private val metrica = YandexMetrica.getReporter(context.applicationContext, BuildConfig.APP_METRICA_KEY)
 
-    override fun resumeSession() = metrica.resumeSession()
+    override fun resumeSession() {
 
-    override fun pauseSession() = metrica.pauseSession()
+    }
+
+    override fun pauseSession() {
+
+    }
 }

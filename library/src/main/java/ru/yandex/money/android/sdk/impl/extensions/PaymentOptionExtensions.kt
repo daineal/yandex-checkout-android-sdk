@@ -59,7 +59,7 @@ internal fun PaymentOption.getIcon(context: Context) = checkNotNull(
             is Wallet, is AbstractWallet -> R.drawable.ym_ic_yamoney
             is LinkedCard -> brand.getIconResId()
             is SbolSmsInvoicing -> R.drawable.ym_ic_sberbank
-            is GooglePay -> R.drawable.ym_ic_google_pay
+            is GooglePay -> R.drawable.gpay
             is PaymentIdCscConfirmation -> R.drawable.ym_ic_add_card
         }
     )?.apply { setBounds(0, 0, intrinsicWidth, intrinsicHeight) }
